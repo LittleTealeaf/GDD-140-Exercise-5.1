@@ -21,7 +21,7 @@ function draw() {
       w_2 = 0;
 
       h_1 = size;
-      h_2 = size * 5 +  Math.random() * width / 3 - width/6
+      h_2 = size * 5 +  Math.random() * width / 3 - width/6;
 
       r = y / height;
 
@@ -30,9 +30,9 @@ function draw() {
       h = h_1 * (1 - r) + h_2 * r;
 
       if((i + y / size)%2 == 0) {
-        fill('black')
+        fill('black');
       } else {
-        fill('white')
+        fill('white');
       }
       rect(x,y,w,h);
     }
