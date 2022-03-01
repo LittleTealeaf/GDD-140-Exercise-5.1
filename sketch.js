@@ -1,43 +1,89 @@
 /// <reference path="./libraries/p5.global-mode.d.ts" />
 
-var columns = 0;
 var size = 0;
+var cols = 0;
+var rows = 0;
 
 function setup() {
   createCanvas(600, 600);
   size = 50;
-  columns = width / size;
+  cols = 10;
+  rows = 10;
 }
 
 function draw() {
-  background(220);
+  background(255);
 
-  for(var y = 0; y < height; y += size) {
-    for(var i = 0; i < columns; i++) {
-      x_1 = i * size;
-      x_2 = width / 2 + Math.random() * width / 3 - width/6;
+  draw_box(0, 0);
 
-      w_1 = size;
-      w_2 = 0;
+  // for(var y = 0; y < height; y += size) {
+  //   for(var i = 0; i < columns; i++) {
+  //     x_1 = i * size;
+  //     x_2 = width / 2 + Math.random() * width / 4 - width/8;
 
-      h_1 = size;
-      h_2 = size * 5 +  Math.random() * width / 3 - width/6;
+  //     w_1 = size;
+  //     w_2 = 0;
 
-      r = y / height;
+  //     h_1 = size;
+  //     h_2 = size * 5 +  Math.random() * width / 2 - width/4;
 
-      x = x_1 * (1 - r) + x_2 * r;
-      w = w_1 * (1 - r) + w_2 * r;
-      h = h_1 * (1 - r) + h_2 * r;
+  //     r = y / height;
 
-      if((i + y / size)%2 == 0) {
-        fill('black');
-      } else {
-        fill('white');
-      }
-      rect(x,y,w,h);
-    }
-  }
-  
+  //     x = x_1 * (1 - r) + x_2 * r;
+  //     w = w_1 * (1 - r) + w_2 * r;
+  //     h = h_1 * (1 - r) + h_2 * r;
+
+  //     if((i + y / size)%2 == 0) {
+  //       fill('black');
+  //     } else {
+  //       fill('white');
+  //     }
+  //     rect(x,y,w,h);
+  //   }
+  // }
+
 
   noLoop();
+}
+
+function draw_box(c, r) {
+  if (c < cols && r < rows) {
+    push();
+    if ((r + c) % 2 == 0) {
+      fill('black');
+    } else {
+      fill('white');
+    }
+
+    rotate(Math.random() * 0.2 - 0.1)
+    rect(0, 0, size, size);
+
+    if(c + 1 < cols) {
+      push();
+      translate(size, 0);
+      draw_box(c + 1, r);
+      pop();
+    }
+
+    if(r + 1 < rows) {
+      push();
+      translate(0,size);
+      draw_box(c,r+1);
+      pop();
+    }
+    // if(c <= r) {
+    //   push();
+    //   translate(size,0);
+    //   draw_box(c+1,r);
+    //   pop();
+    // }
+    // if (r >= c ) {
+    //   push();
+    //   translate(0,size);
+    //   draw_box(c,r+1);
+    //   pop();
+    // }
+
+    pop();
+  }
 }
