@@ -55,7 +55,7 @@ function draw_box(c, r) {
       fill('white');
     }
 
-    rotate(Math.random() * 0.2 - 0.1)
+    rotate(Math.random() * 0.15 - 0.075);
     rect(0, 0, size, size);
 
     if(c + 1 < cols) {
