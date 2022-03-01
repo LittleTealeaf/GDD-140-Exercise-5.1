@@ -65,7 +65,7 @@ function draw_box(c, r) {
       pop();
     }
 
-    if(r + 1 < rows) {
+    if(c == 0) {
       push();
       translate(0,size);
       draw_box(c,r+1);
