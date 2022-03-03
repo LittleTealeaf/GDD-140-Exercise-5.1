@@ -1,4 +1,4 @@
-# Order and Chaos
+# Order and Disorder
 ## GDD-140 Exercise 5.1
 
 [![CodeQL](https://github.com/LittleTealeaf/GDD-140-Exercise-5.1/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/LittleTealeaf/GDD-140-Exercise-5.1/actions/workflows/codeql-analysis.yml) [![pages-build-deployment](https://github.com/LittleTealeaf/GDD-140-Exercise-5.1/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/LittleTealeaf/GDD-140-Exercise-5.1/actions/workflows/pages/pages-build-deployment)
